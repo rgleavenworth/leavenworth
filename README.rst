@@ -34,11 +34,7 @@ leavenworth
 ===========
 
 
-    Add a short description here!
-
-
-A longer description of your project goes here...
-
+    Leavenworth is a Python package for the financial analysis of crypto and equity markets with easy to use methods
 
 .. _pyscaffold-notes:
 
