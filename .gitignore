@@ -52,3 +52,9 @@ MANIFEST
 .venv*/
 .conda*/
 .python-version
+Lib/*
+Scripts/*
+
+# Secrets
+api.json
+
