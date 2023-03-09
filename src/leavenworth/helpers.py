@@ -7,6 +7,7 @@ from datetime import datetime
 from pathlib import Path
 from inspect import signature
 from functools import wraps
+import requests
 
 # Should only be used on functions/methods that don't have keyword arguments
 def typeassert(*ty_args, **ty_kwargs):
@@ -79,3 +80,12 @@ def validate_date(d, fmt = '%Y-%m-%d'):
     vd = datetime.strptime(d, fmt)
     return vd
     
+
+def btcusd_coinbase():
+    endpoint = 'https://api.coinbase.com/v2/exchange-rates?currency=USD'  # this is the coinbase API endpoint for the data
+    response = requests.get(endpoint)
+    if response.status_code == 200:
+        data = json.loads(response.text)
+    else:
+        raise Exception('Coinbase API call failed')
+    return round(1/float(data['data']['rates']['BTC']),2)

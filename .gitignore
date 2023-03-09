@@ -58,3 +58,6 @@ Scripts/*
 # Secrets
 api.json
 
+#notebooks
+.ipynb_checkpoints
+*.ipynb
